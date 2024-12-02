@@ -1,0 +1,268 @@
+/* Genel stiller */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: url('https://c.pxhere.com/images/bb/33/236b94101303b45f761c1d55a2cc-1631141.jpg!d') no-repeat center center/cover; /* Arka plan fotoğrafı */
+    position: relative;
+    overflow: hidden; /* Taşmaları gizlemek için */
+}
+
+body::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6); /* Kararma efekti */
+    z-index: 1;
+}
+
+.container {
+    text-align: center;
+    color: white;
+    position: relative;
+    z-index: 2; /* İçerik arka plan efektinin üzerinde görünmesi için */
+}
+
+/* Logo Stili */
+.logo {
+    margin-bottom: 30px;
+    transform-origin: center;
+    position: absolute; /* Logo'nun konumunu ayarlamak için */
+    top: -350px; /* Sayfanın en üst kısmına yerleştir */
+    left: 50%;
+    transform: translateX(-50%); /* Ortalamak için */
+}
+
+.logo img {
+    width: 200px; /* Logonun boyutu */
+    height: auto;
+    transition: transform 0.5s ease-in-out;
+}
+
+.logo:hover img {
+    transform: rotate(360deg); /* İmleç üzerine gelince 360 derece dönme efekti */
+}
+
+.notice {
+    position: relative;
+    display: inline-block;
+    color: white; /* Ana yazı rengi */
+    font-size: 1.5rem; /* Yazı boyutu */
+    overflow: hidden; /* Taşmaları gizlemek için */
+    font-family: 'Montserrat', sans-serif;
+
+}
+
+.hacked {
+    position: relative;
+    display: inline-block;
+    color: white; /* Ana yazı rengi */
+    font-size: 1.1rem; /* Yazı boyutu */
+    overflow: hidden; /* Taşmaları gizlemek için */
+    font-family: 'Montserrat', sans-serif;
+}
+
+.soz {
+    position: relative;
+    display: inline-block;
+    top: 330px;
+    color: white; /* Ana yazı rengi */
+    font-size: 1.1rem; /* Yazı boyutu */
+    bottom: 0;
+    overflow: hidden; /* Taşmaları gizlemek için */
+    transform: translate(5.5%);
+    font-family: "Inconsolata", monospace;
+}
+
+/* Footer Logo Stili */
+.footer-logo {
+    position: absolute;
+    bottom: 20px; /* Sayfanın en alt kısmına yerleştir */
+    left: 47.5%;
+    transform: translateX(-130%); /* Ortalamak için */
+    z-index: 2;
+    display: flex; /* Logo ve yazıyı yan yana yerleştirmek için */
+    align-items: center; /* Dikey olarak ortalamak için */
+}
+
+.footer-logo img {
+    width: 50px; /* Logonun genişliğini ayarlamak için */
+    height: auto;
+    transition: transform 0.5s ease-in-out; /* Geçiş efekti */
+}
+
+.footer-logo:hover img {
+    transform: rotate(360deg); /* İmleç üzerine gelince 360 derece dönme efekti */
+}
+
+.footer-text {
+    color: white; /* Yazı rengi */
+    font-size: 1.4rem; /* Yazı boyutu */
+    margin-left: 10px; /* Logo ile yazı arasında boşluk */
+    white-space: nowrap; /* Tek satırda kalması için */
+    opacity: 0; /* Başlangıçta görünmez */
+    transform: translateY(100px) rotate(0deg); /* Aşağıdan kaydırma ve döndürme efekti */
+    animation: slideIn 1s ease-in-out forwards, pulse 1.5s infinite; /* Yeni kaydırma ve pulse animasyonu */
+}
+
+.new-logo {
+    position: absolute;
+    bottom: 2px; /* Sayfanın en alt kısmına yerleştir */
+    left: 180%;
+    transform: translateX(-130%); /* Ortalamak için */
+    z-index: 2;
+    display: flex; /* Logo ve yazıyı yan yana yerleştirmek için */
+    align-items: center; /* Dikey olarak ortalamak için */
+}
+
+.new-logo img {
+    width: 50px; /* Logonun genişliğini ayarlamak için */
+    height: auto;
+    transition: transform 0.5s ease-in-out; /* Geçiş efekti */
+}
+
+.new-logo:hover img {
+    transform: rotate(360deg); /* İmleç üzerine gelince 360 derece dönme efekti */
+}
+
+.new-text {
+    color: white; /* Yazı rengi */
+    font-size: 1.4rem; /* Yazı boyutu */
+    margin-left: 10px; /* Logo ile yazı arasında boşluk */
+    white-space: nowrap; /* Tek satırda kalması için */
+    opacity: 0; /* Başlangıçta görünmez */
+    transform: translateY(100px) rotate(0deg); /* Aşağıdan kaydırma ve döndürme efekti */
+    animation: slideIn 1s ease-in-out forwards, pulse 1.5s infinite; /* Yeni kaydırma ve pulse animasyonu */
+}
+
+.telegram-logo {
+    position: absolute;
+    bottom: 0.1px; /* Sayfanın en alt kısmına yerleştir */
+    left: 244%;
+    transform: translateX(-130%); /* Ortalamak için */
+    z-index: 2;
+    display: flex; /* Logo ve yazıyı yan yana yerleştirmek için */
+    align-items: center; /* Dikey olarak ortalamak için */
+}
+
+.telegram-logo img {
+    width: 50px; /* Logonun genişliğini ayarlamak için */
+    height: auto;
+    transition: transform 0.5s ease-in-out; /* Geçiş efekti */
+}
+
+.telegram-logo:hover img {
+    transform: rotate(360deg); /* İmleç üzerine gelince 360 derece dönme efekti */
+}
+
+.telegram-text {
+    color: white; /* Yazı rengi */
+    font-size: 1.4rem; /* Yazı boyutu */
+    margin-left: 10px; /* Logo ile yazı arasında boşluk */
+    white-space: nowrap; /* Tek satırda kalması için */
+    opacity: 0; /* Başlangıçta görünmez */
+    transform: translateY(100px) rotate(0deg); /* Aşağıdan kaydırma ve döndürme efekti */
+    animation: slideIn 1s ease-in-out forwards, pulse 1.5s infinite; /* Yeni kaydırma ve pulse animasyonu */
+}
+
+.tht-logo {
+    position: absolute;
+    bottom: 0.1px; /* Sayfanın en alt kısmına yerleştir */
+    left: 370%;
+    transform: translateX(-130%); /* Ortalamak için */
+    z-index: 2;
+    display: flex; /* Logo ve yazıyı yan yana yerleştirmek için */
+    align-items: center; /* Dikey olarak ortalamak için */
+}
+
+.tht-logo img {
+    width: 50px; /* Logonun genişliğini ayarlamak için */
+    height: auto;
+    transition: transform 0.5s ease-in-out; /* Geçiş efekti */
+}
+
+.tht-logo:hover img {
+    transform: rotate(360deg); /* İmleç üzerine gelince 360 derece dönme efekti */
+}
+
+.tht-text {
+    color: white; /* Yazı rengi */
+    font-size: 1.4rem; /* Yazı boyutu */
+    margin-left: 11px; /* Logo ile yazı arasında boşluk */
+    white-space: nowrap; /* Tek satırda kalması için */
+    opacity: 0; /* Başlangıçta görünmez */
+    transform: translateY(100px) rotate(0deg); /* Aşağıdan kaydırma ve döndürme efekti */
+    animation: slideIn 1s ease-in-out forwards, pulse 1.5s infinite; /* Yeni kaydırma ve pulse animasyonu */
+}
+
+
+
+/* Animasyon tanımları */
+@keyframes slideIn {
+    0% {
+        opacity: 0;
+        transform: translateY(100px) rotate(0deg); /* Aşağıdan gelir */
+    }
+    50% {
+        opacity: 0.7; /* Yavaşça görünür hale gelir */
+        transform: translateY(-10px) rotate(5deg); /* Yukarı kayma ve hafif döndürme */
+    }
+    100% {
+        opacity: 1; /* Tamamen görünür hale gelir */
+        transform: translateY(0) rotate(0deg); /* Son konumda durur */
+    }
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1); /* Normal boyut */
+    }
+    50% {
+        transform: scale(1.1); /* %10 büyür */
+    }
+    100% {
+        transform: scale(1); /* Normal boyuta döner */
+    }
+}
+
+/* Yanıp sönme animasyonu */
+@keyframes blink {
+    0% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+/* Yanıp sönme animasyonu 3 saniye sürecek şekilde ayarlandı */
+.blink-animation {
+    animation: blink 3s infinite;
+}
+
+/* Hacked By yazısı beyaz renkte */
+.white-text {
+    color: white;
+    font-size: 2.5rem; /* Yazı boyutu */
+}
+
+/* AimPluqqed yazısı kırmızı renkte */
+.red-text {
+    color: red;
+    font-size: 2.5rem; /* Yazı boyutu */
+}
+
